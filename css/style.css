@@ -1,11 +1,17 @@
 .sidebar {
 	width: 300px;
-	margin-left: 10px;
 	float: left;
 }
 
 .code{
-	width: 1000px;
+	width: 79.8%;
 	float: left;
-	margin-left: 20px;
+	margin-left: 15px;
+
+}
+
+
+.s_content{
+	width: 85%;
+	margin: auto;
 }

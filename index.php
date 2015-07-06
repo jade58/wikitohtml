@@ -19,7 +19,7 @@
       <![endif]-->
     </head>
     <body>
-
+<div class="s_content">
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -72,6 +72,7 @@
 
       </div>
 
+    </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
