@@ -69,7 +69,7 @@
         setcookie ("token", "", time() - 3600);
         setcookie ("user_id", "", time() - 3600); 
 
-        header("Location: http://localhost/sls/"); //Что бы кукисы обновились  
+        header("Location: http://localhost/wth/"); //Что бы кукисы обновились  
 
   }
 
