@@ -88,11 +88,11 @@
 
   }
 
-  function get_html($token) {
+  function get_html($token,$select) {
 
         global $owner_id,$page_id;
 
-        $api_url = 'https://api.vk.com/method/pages.get?owner_id='.$owner_id.'&page_id='.$page_id.'&need_html=1&access_token='.$token.'';
+        $api_url = 'https://api.vk.com/method/pages.get?owner_id='.$owner_id.'&page_id='.$page_id.'&need_html=1&need_source=1&access_token='.$token.'';
 
         $api_qurey = curl_init();
 
@@ -105,9 +105,16 @@
 
         $response_array = $api_array['response'];
 
-        return $response_array['html'];
-     
+        if ($select == 1) {
 
+          return $response_array['html'];
+
+        } else {
+          
+          return $response_array['source'];
+
+        }
+     
   }
 
 

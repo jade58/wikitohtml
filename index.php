@@ -136,7 +136,9 @@ if (isset($_GET['url'])) {
                    
                   echo '<textarea class="form-control" rows="20" id="textArea">';
 
-                     echo get_html($token); //Вызываем функцию и получаем код HTML
+                  $select = 2;
+
+                     echo get_html($token,$select); //Вызываем функцию и получаем код HTML
 
                   echo '</textarea>';
 
