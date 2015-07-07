@@ -34,7 +34,7 @@ if (isset($_GET['logout'])) {
 logout (); //Выходим
 }
 
-if (isset($_GET['url'])) {
+if ((isset($_GET['url'])) and isset($_COOKIE['token'])) {
 
     str_exp($_GET['url']); // Разделяем URL
 

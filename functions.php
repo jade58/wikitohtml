@@ -81,10 +81,14 @@
 
     global $owner_id,$page_id;
 
+    if (!empty($string)) {
+
         $exp_url = explode('_', $string);
 
         $owner_id = $exp_url[0];
         $page_id = $exp_url[1];
+
+    }
 
   }
 
