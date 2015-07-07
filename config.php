@@ -1,9 +1,9 @@
 <?php
 
-$app_id = '';
-$app_key = '';
+$app_id = '4950563'; //ID приложения
+$app_key = 'Y0uQ1pLq8MBIlGPfb1W8'; //Секретный ключ
 
-$tite = '';
-$site_name = '';
+$title = 'WikiToHtml';
+$site_name = 'Wiki To Html';
 
 ?>

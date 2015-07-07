@@ -12,6 +12,7 @@ ini_set('display_errors', 1); //Отображение ошибок
 error_reporting(E_ALL);  //Отображение ошибок
 
 require_once 'functions.php'; //Подключаем файл с функциями
+require_once 'config.php'; //Подключаем файл с функциями
 
 $url = $_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; //URL
 
@@ -49,7 +50,7 @@ if ((isset($_GET['url'])) and isset($_COOKIE['token'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title><?php echo $title; ?></title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -74,7 +75,7 @@ if ((isset($_GET['url'])) and isset($_COOKIE['token'])) {
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Wiki To Html</a>
+            <a class="navbar-brand" href="".$url.""><?php echo $site_name; ?></a>
           </div>
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -85,7 +86,7 @@ if ((isset($_GET['url'])) and isset($_COOKIE['token'])) {
             <ul class="nav navbar-nav navbar-right">
               <?php
               if (!isset($_COOKIE['token'])) {
-                echo '<li><a href="https://oauth.vk.com/authorize?client_id=4950563&scope=128&redirect_uri=http://'.$url.'&response_type=code">Авторизация</a></li>';
+                echo '<li><a href="https://oauth.vk.com/authorize?client_id='.$app_id.'&scope=128&redirect_uri=http://'.$url.'&response_type=code">Авторизация</a></li>';
               } else {
                 echo '<li><a href="#">Привет, '.get_name($user_id).'</a></li>';
                 echo '<li><a href="'.$_SERVER['SCRIPT_NAME'].'?logout=1">Выход</a></li>';

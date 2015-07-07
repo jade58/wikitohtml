@@ -13,17 +13,19 @@
   //Функция при помощи которорой мы получаем 
   //acces_token и ID пользователя 
 
+require_once 'config.php'; //Подключаем файл с функциями
+
  $user_id = '';
  $owner_id = '';
  $page_id = '';
 
   function get_token ($secret_code,$url) {
 
-    global $user_id;
+    global $user_id,$app_id,$app_key;
 
      if (!empty($secret_code)) {
          
-        $api_url = 'https://oauth.vk.com/access_token?client_id=4950563&client_secret=Y0uQ1pLq8MBIlGPfb1W8&code='.$secret_code.'&redirect_uri='.$url.''; 
+        $api_url = 'https://oauth.vk.com/access_token?client_id='.$app_id.'&client_secret='.$app_key.'&code='.$secret_code.'&redirect_uri='.$url.''; 
         $api_qurey = curl_init();
 
         curl_setopt($api_qurey, CURLOPT_URL, $api_url);
