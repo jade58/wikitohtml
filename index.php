@@ -145,7 +145,7 @@ if ((isset($_GET['url'])) and isset($_COOKIE['token'])) {
             
             if (isset($_COOKIE['token'])) {
 
-              if (isset($_GET['url'])) {
+              if ((isset($_GET['url'])) and !empty($_GET['url'])) {
                    
                   echo '<textarea class="form-control" rows="20" id="textArea">';
 
