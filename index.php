@@ -86,7 +86,7 @@ if ((isset($_GET['url'])) and isset($_COOKIE['token'])) {
             <ul class="nav navbar-nav navbar-right">
               <?php
               if (!isset($_COOKIE['token'])) {
-                echo '<li><a href="https://oauth.vk.com/authorize?client_id='.$app_id.'&scope=128&redirect_uri=http://'.$url.'&response_type=code">Авторизация</a></li>';
+                echo '<li><a href="https://oauth.vk.com/authorize?client_id=4950563&scope=128&redirect_uri=http://'.$url.'&response_type=code">Авторизация</a></li>';
               } else {
                 echo '<li><a href="#">Привет, '.get_name($user_id).'</a></li>';
                 echo '<li><a href="'.$_SERVER['SCRIPT_NAME'].'?logout=1">Выход</a></li>';
