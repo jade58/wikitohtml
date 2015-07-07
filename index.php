@@ -34,14 +34,13 @@ if (isset($_GET['logout'])) {
 logout (); //Выходим
 }
 
-if (isset($_GET['send'])) {
-    $query = urlencode($_GET['query']); //Поисковый запрос
-  } else if(isset($_GET['query'])) {
-    $query = $_GET['query']; 
-  }
+if (isset($_GET['url'])) {
 
+    str_exp($_GET['url']); // Разделяем URL
 
-  ?>
+}
+
+?>
 
   <!DOCTYPE html>
   <html lang="en">
@@ -106,7 +105,7 @@ if (isset($_GET['send'])) {
 
                <div class="form-group">
                  <label class="control-label" for="focusedInput">URL страницы</label>
-                 <input class="form-control" id="focusedInput" type="text">
+                 <input class="form-control" id="focusedInput" name="url" type="text">
                </div>
 
                <input class="btn btn-default" type="submit" value="Получить код">
