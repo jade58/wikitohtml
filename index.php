@@ -123,13 +123,30 @@ if (isset($_GET['url'])) {
       </div>
 
 
-
-      <div class="col-md-9"> <div class="well">
+   <div class="col-md-9"> <div class="well">
 
         <div class="form-group">
 
 
-          <textarea class="form-control" rows="20" id="textArea"></textarea>
+          <?php
+            
+            if (isset($_COOKIE['token'])) {
+
+              if (isset($_GET['url'])) {
+                   
+                  echo '<textarea class="form-control" rows="20" id="textArea">';
+                     
+                  echo '</textarea>';
+
+              } else {
+                echo "<blockquote>Введите URL</blockquote>";
+              }
+
+            } else {
+              echo "<blockquote>Авторизируйтесь!</blockquote>";
+            }
+
+          ?>
 
         </div>
 
