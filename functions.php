@@ -13,6 +13,8 @@
   //acces_token и ID пользователя 
 
  $user_id = '';
+ $owner_id = '';
+ $page_id = '';
 
   function get_token ($secret_code,$url) {
 
@@ -73,38 +75,19 @@
 
   }
 
-  //Функция при помощи которой получаем список аудиозаписей (массив)
+  //Функция для разделения URL
 
-  function get_audio ($query,$access_token) {
+  function str_exp($string) {
 
-        $api_url = 'https://api.vk.com/method/audio.search?q='.$query.'&access_token='.$access_token.'&lyrics=1&count=30';
+    global $owner_id,$page_id;
 
-        $api_qurey = curl_init();
+        $exp_url = explode('_', $string);
 
-        curl_setopt($api_qurey, CURLOPT_URL,$api_url);
-        curl_setopt($api_qurey, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($api_qurey, CURLOPT_HEADER, 0);
-
-        $api_response = curl_exec($api_qurey);
-        $api_array = json_decode($api_response,true);
-
-        $response_array = $api_array['response'];
-
-        array_shift($response_array);
-
-        foreach ($response_array as $result) {
-           
-        echo 
-<<<HTML
-<a href="http://localhost/sls/index.php?query=$query&lyrics=$result[lyrics_id]&send=1" class="list-group-item">
-<h4 class="list-group-item-heading">$result[artist]</h4>
-<p class="list-group-item-text">$result[title]</p>
-</a>
-HTML;
-
-        }
+        $owner_id = $exp_url[0];
+        $page_id = $exp_url[1];
 
   }
+
 
 
 ?>

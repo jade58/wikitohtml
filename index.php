@@ -13,7 +13,7 @@ error_reporting(E_ALL);  //Отображение ошибок
 
 require_once 'functions.php'; //Подключаем файл с функциями
 
-$url = $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']; //URL сайта
+$url = $_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME']; //URL
 
 if ((!isset($_COOKIE['token'])) and isset($_GET['code'])) {
 $token = get_token($_GET['code'],$url); //Запиешм результат работы функции GET_TOKEN
@@ -86,10 +86,10 @@ if (isset($_GET['send'])) {
             <ul class="nav navbar-nav navbar-right">
               <?php
               if (!isset($_COOKIE['token'])) {
-                echo '<li><a href="https://oauth.vk.com/authorize?client_id=4950576&scope=8&redirect_uri=http://'.$url.'&response_type=code">Авторизация</a></li>';
+                echo '<li><a href="https://oauth.vk.com/authorize?client_id=4950576&scope=128&redirect_uri=http://'.$url.'&response_type=code">Авторизация</a></li>';
               } else {
                 echo '<li><a href="#">Привет, '.get_name($user_id).'</a></li>';
-                echo '<li><a href="http://localhost/wth/index.php?logout=1">Выход</a></li>';
+                echo '<li><a href="'.$_SERVER['SCRIPT_NAME'].'?logout=1">Выход</a></li>';
               }
               ?>
             </div>
