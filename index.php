@@ -106,7 +106,20 @@ if (isset($_GET['url'])) {
                <div class="form-group">
                  <label class="control-label" for="focusedInput">URL страницы</label>
                  <input class="form-control" id="focusedInput" name="url" type="text">
+               
+               <br>
+
+               <label>
+                 <input type="radio" name="select" value="1" checked="">
+                   Wiki
+               </label>
+               <label>
+                 <input type="radio" name="select" value="2" checked="">
+                   HTML
+               </label>
+
                </div>
+               
 
                <input class="btn btn-default" type="submit" value="Получить код">
 
@@ -136,7 +149,7 @@ if (isset($_GET['url'])) {
                    
                   echo '<textarea class="form-control" rows="20" id="textArea">';
 
-                  $select = 2;
+                  $select = $_GET['select'];
 
                      echo get_html($token,$select); //Вызываем функцию и получаем код HTML
 
