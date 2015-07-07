@@ -110,12 +110,12 @@ if (isset($_GET['url'])) {
                <br>
 
                <label>
-                 <input type="radio" name="select" value="1" checked="">
-                   Wiki
+                 <input type="radio" name="select" value="1">
+                   HTML
                </label>
                <label>
-                 <input type="radio" name="select" value="2" checked="">
-                   HTML
+                 <input type="radio" name="select" value="2">
+                   WIKI
                </label>
 
                </div>
