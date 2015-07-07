@@ -22,7 +22,7 @@
 
      if (!empty($secret_code)) {
          
-        $api_url = 'https://oauth.vk.com/access_token?client_id=4950576&client_secret=h6iDx3eADczomfZ39209&code='.$secret_code.'&redirect_uri='.$url.''; 
+        $api_url = 'https://oauth.vk.com/access_token?client_id=4950563&client_secret=Y0uQ1pLq8MBIlGPfb1W8&code='.$secret_code.'&redirect_uri='.$url.''; 
         $api_qurey = curl_init();
 
         curl_setopt($api_qurey, CURLOPT_URL, $api_url);
@@ -92,7 +92,20 @@
 
         global $owner_id,$page_id;
 
-        $api_url = 'https://api.vk.com/method/pages.get?owner_id='.$owner_id.'&page_id='.$page_id.'&need_html=1&access_token'.$token.'';
+        $api_url = 'https://api.vk.com/method/pages.get?owner_id='.$owner_id.'&page_id='.$page_id.'&need_html=1&access_token='.$token.'';
+
+        $api_qurey = curl_init();
+
+        curl_setopt($api_qurey, CURLOPT_URL,$api_url);
+        curl_setopt($api_qurey, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($api_qurey, CURLOPT_HEADER, 0);
+
+        $api_response = curl_exec($api_qurey);
+        $api_array = json_decode($api_response,true);
+
+        $response_array = $api_array['response'];
+
+        return $response_array['html'];
      
 
   }
