@@ -92,7 +92,7 @@
 
         global $owner_id,$page_id;
 
-        $api_url = 'https://api.vk.com/method/pages.get?owner_id='.$owner_id.'&page_id='.$page_id.'&need_html=1&need_source=1&access_token='.$token.'';
+        $api_url = 'https://api.vk.com/method/pages.get?owner_id='.$owner_id.'&page_id='.$page_id.'&need_html=1&access_token='.$token.'';
 
         $api_qurey = curl_init();
 
