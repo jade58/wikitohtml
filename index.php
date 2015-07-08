@@ -127,13 +127,6 @@ if ((isset($_GET['url'])) and isset($_COOKIE['token'])) {
              </form>
            </div>
          </div>
-
-         <div class="panel panel-default">
-          <div class="panel-heading">Контакты</div>
-          <div class="panel-body">
-
-          </div>
-        </div>
       </div>
 
 
