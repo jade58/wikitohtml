@@ -134,8 +134,7 @@ if ((isset($_GET['url'])) and isset($_COOKIE['token'])) {
 
         <div class="form-group">
 
-
-          <?php
+         <?php
             
             if (isset($_COOKIE['token'])) {
 
