@@ -6,7 +6,6 @@
 @Name - WikiToHTML
 @Version - 0.2
 @Git - https://github.com/jade58/wth
-
 */
 
 
@@ -84,14 +83,20 @@ require_once 'config.php'; //Подключаем файл с функциями
 
     global $owner_id,$page_id;
 
-    if (!empty($string)) {
+    $strchek = strpos($string, '_');
+
+    if ($strchek == true) {
+
+      if (!empty($string)) {
 
         $exp_url = explode('_', $string);
 
         $owner_id = $exp_url[0];
         $page_id = $exp_url[1];
 
-    }
+      } 
+
+  }
 
   }
 
@@ -110,6 +115,8 @@ require_once 'config.php'; //Подключаем файл с функциями
         $api_response = curl_exec($api_qurey);
         $api_array = json_decode($api_response,true);
 
+        if (!empty($api_array['response'])) {
+
         $response_array = $api_array['response'];
 
         if ($select == 1) {
@@ -121,6 +128,12 @@ require_once 'config.php'; //Подключаем файл с функциями
           return $response_array['source'];
 
         }
+
+      } else {
+
+        echo "Ошибка!";
+
+      }
      
   }
 
