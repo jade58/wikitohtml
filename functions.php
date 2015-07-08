@@ -83,7 +83,7 @@ require_once 'config.php'; //Подключаем файл с функциями
 
     global $owner_id,$page_id;
 
-    $strchek = strpos($string, '_');
+    $strchek = strpos($string, '_'); //Ищем символ "_" в входной строке
 
     if ($strchek == true) {
 
